@@ -10,5 +10,15 @@
   <%= @user.name %>
 </p>
 
+     <div class="span8">
+    <% if @user.orders.any? %>
+      <h3>Microposts (<%= @user.orders.count %>)</h3>
+      <ol class="orders">
+        <%= render @orders %>
+      </ol>
+      <%= will_paginate @orders %>
+    <% end %>
+  </div>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

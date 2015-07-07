@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-   before_action :correct_user,   only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
 
   # GET /users
   # GET /users.json
@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-
+  	@user = User.find(params[:id])
+  	@orders = @user.orders
   end
 
   # GET /users/new
@@ -28,7 +29,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

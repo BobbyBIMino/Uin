@@ -2,21 +2,21 @@
 
 <p>
   <strong>User:</strong>
-  <%= @user.user_id %>
+  <%= @user.id %>
 </p>
 
-<p>
+  <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
 
      <div class="span8">
     <% if @user.orders.any? %>
-      <h3>Microposts (<%= @user.orders.count %>)</h3>
+      <h3>orders (<%= @user.orders.count %>)</h3>
       <ol class="orders">
         <%= render @orders %>
       </ol>
-      <%= will_paginate @orders %>
+      <%#= will_paginate @orders %>
     <% end %>
   </div>
 

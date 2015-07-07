@@ -1,0 +1,2 @@
+class FileInOrdersController < ApplicationController
+end

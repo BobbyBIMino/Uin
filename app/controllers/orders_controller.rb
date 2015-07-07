@@ -17,6 +17,6 @@ before_action :signed_in_user
   private
 
     def order_params
-      params.require(:order).permit(:id)
+      params.require(:order).permit(:order_number)
     end
 end

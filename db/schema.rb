@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707013318) do
+ActiveRecord::Schema.define(version: 20150707052550) do
+
+  create_table "file_in_orders", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "order_id",   limit: 255
+    t.string   "type",       limit: 255
+    t.integer  "page",       limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string   "order_number",     limit: 255
@@ -24,13 +33,17 @@ ActiveRecord::Schema.define(version: 20150707013318) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer  "user_id",        limit: 4
-    t.string   "name",           limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.string   "sex",            limit: 255
-    t.string   "remember_token", limit: 255
-    t.string   "password",       limit: 255
+    t.integer  "user_id",           limit: 4
+    t.string   "name",              limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "sex",               limit: 255
+    t.string   "remember_token",    limit: 255
+    t.string   "password",          limit: 255
+    t.integer  "age",               limit: 4
+    t.string   "school",            limit: 255
+    t.string   "major",             limit: 255
+    t.integer  "quantity_of_users", limit: 4
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree

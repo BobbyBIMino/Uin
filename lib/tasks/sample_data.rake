@@ -24,10 +24,26 @@ namespace :db do
       order_number = Faker::PhoneNumber.phone_number
       price = 0.5
       order_state = "Paid"
+
       users.each { |user| user.orders.create!(order_number: order_number,
       											price: price,
       											order_state: order_state
       																) }
+
     end
+
+    orders = Order.all
+      10.times do |variable|
+        name = Faker::Name.name
+        page = 10
+        orders.each{ |order| order.file_in_orders.create!(name: name,
+                                                          page: page,
+          )
+
+        }
+      end
+
+
+
   end
 end

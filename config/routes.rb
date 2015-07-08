@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   match '/signup',  to: 'users#new',            via: 'get'
 
   resources :orders
+  resources :file_in_orders
 
   resources :sessions,only:[:new,:create,:destroy]
   match '/signup',  to: 'users#new',            via: 'get'

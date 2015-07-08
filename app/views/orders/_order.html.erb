@@ -4,6 +4,9 @@
   <span class="content"><%= order.id %></span>
   <span class="content"><%= order.price %></span>
   <span class="content"><%= order.order_state %></span>
-  <td><%= link_to '文件详情', options= {:controller =>'orders',:action =>"show"} %></td>
+  <td><%= link_to '文件详情', options= {:controller =>"orders",:action =>"show",:order_id =>order.id} %></td>
+
+
+  </ol>
 
 </li>

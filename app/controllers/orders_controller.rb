@@ -12,9 +12,9 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find(params[:order_id])
     @file_in_orders =@order.file_in_orders
-    render @files_in_orders
+    render  @file_in_orders
   end
 
   def destroy

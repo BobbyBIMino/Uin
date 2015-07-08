@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'users#new'
   match '/signup',  to: 'users#new',            via: 'get'
 
+  resources :orders
+
   resources :sessions,only:[:new,:create,:destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

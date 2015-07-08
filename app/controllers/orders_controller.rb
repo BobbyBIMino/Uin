@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-before_action :signed_in_user
+# before_action :signed_in_user
 
   def create
     @order = current_user.orders.build(order_params)
@@ -9,6 +9,12 @@ before_action :signed_in_user
     else
       render 'static_pages/home'
     end
+  end
+
+  def show
+    @order = Order.find(params[:id])
+    @file_in_orders =@order.file_in_orders
+    render @files_in_orders
   end
 
   def destroy

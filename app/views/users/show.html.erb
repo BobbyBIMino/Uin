@@ -9,14 +9,12 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
-
-     <div class="span8">
+    <div class="span8">
     <% if @user.orders.any? %>
       <h3>orders (<%= @user.orders.count %>)</h3>
       <ol class="orders">
         <%= render @orders %>
       </ol>
-      <%#= will_paginate @orders %>
     <% end %>
   </div>
 
